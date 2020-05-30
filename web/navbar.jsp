@@ -35,21 +35,16 @@
 				<%--导航栏--%>
 				<div class="collapse navbar-collapse">
 					<ul class="nav navbar-nav navbar-left" style="margin-left: 20px;">
-						<li><a href="../网页/首页.html">首页&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+						<li><a href="Home.jsp">首页&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 								我要买车&nbsp;&nbsp;&nbsp;&nbsp;
 								<b class="caret"></b>
 							</a>
 							<ul class="dropdown-menu">
-								<li><a href="">信息填写</a></li>
-								<li class="divider"></li>
-								<li><a href=""></a></li>
-								<li class="divider"></li>
-								<li><a href=""></a></li>
-								<li class="divider"></li>
-								<li><a href=""></a></li>
-								
+								<li><a href="Classify.jsp">车型选择</a></li>
+								<li><a href="#">预约看车</a></li>
+								<li><a href="#"></a></li>
 							</ul>
 						</li>
 						<li class="dropdown">
@@ -58,16 +53,14 @@
 								<b class="caret"></b>
 							</a>
 							<ul class="dropdown-menu">
-								<li><a href="AddCar.jsp">卖车</a></li>
-								<li class="divider"></li><%--分割线--%>
+								<li><a href="AddCar.jsp">车辆出售</a></li>
+								<%--<li class="divider"></li>分割线--%>
 								<li><a href="AddCarHistory.jsp">车辆发布历史</a></li>
-								<li><a href=""></a></li>
-								<li><a href=""></a></li>
-								<li><a href=""></a></li>
+								<li><a href="CarValue.jsp">车辆价值预估</a></li>
 							</ul>
 						</li>
-						<li><a href="../网页/设计流派1.html">车辆价值预估&nbsp;&nbsp;&nbsp;</a></li>
-						<li><a href="../网页/联系我们.html">预约</a></li>
+						<li><a href="B&SList.jsp">订单查看&nbsp;&nbsp;&nbsp;</a></li>
+						<li><a href="#">联系我们</a></li>
 					</ul>
 				</div>
 

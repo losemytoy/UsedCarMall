@@ -8,6 +8,12 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%
+    Object username = session.getAttribute("userId");
+    if(null == username){
+        response.sendRedirect("UserLogIn.jsp");
+    }
+%>
 <html>
 <head>
     <title>员工信息查询</title>
