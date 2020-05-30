@@ -1,0 +1,67 @@
+.play_font{
+	position: absolute;
+	text-align: left;
+	padding-bottom: 10%;
+}
+#play h1{
+	font-family: "LatoBlack";
+	font-size: 55px;
+	line-height: 40px;
+	letter-spacing: 10px;
+}
+/*#design{
+	margin: center;
+}*/
+#title{
+	font-size: 30px;
+	color: rgb(68,68,68);
+	font-weight: bold;
+	text-align: center;
+	padding: 80px 0;
+}
+#part3{
+	margin:auto;
+	overflow:hidden;
+}
+#part3 ul li{
+	list-style-type: none;
+	float:left;
+	margin-right:14px;
+	margin-bottom:13px;
+	display:inline;
+	overflow:hidden;
+	position:relative;
+}
+#part3 ul li img{
+	position: relative;
+	width: 220px;
+	height: 520px;
+	overflow: hidden;
+}
+.parts_font{
+	position: absolute;bottom: -40px;
+	width: 220px;
+	height: 210px;
+	text-align: center;
+	overflow: hidden;
+	
+}
+#part3 .parts_font h3{
+	width: 220px;
+	height: 40px;
+	line-height: 40px;
+	color: #000000;
+	background: #fff;
+	font-family: "微软雅黑";
+	font-size: 18px;
+	text-align: center;
+}
+#part3 .rsp {
+	width: 220px;
+	height: 520px;
+	overflow: hidden;
+	position:absolute;
+	background: #000;
+	z-index: 20;
+	top:0px;
+}

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <constant name="struts.devMode" value="true"/>
+    <constant name="struts.multipart.maxSize" value="10000000"/>
+
+    <constant name="struts.multipart.saveDir" value="/tmp"/>
+    <constant name="struts.custom.i18n.resources" value="struts"></constant>
+
+
+    <package name="hello" namespace="/" extends="struts-default">
+        <action name="*Connection" class="XXConnection" method="{1}">
+            <result name = "error">/Error.jsp</result>
+            <result name = "index">/index.jsp</result>
+            <result name="Home">/Home.jsp</result>
+            <result name="adminIndex">/adminIndex.jsp</result>
+        </action>
+
+
+        <action name="*Action" class="XXAction" method="{1}">
+            <result name="index">/index.jsp</result>
+            <result name="Home">/Home.jsp</result>
+            <result name="success">/Success.jsp</result>
+            <result name="error">/Error.jsp</result>
+            <result name="modCar">/modCar.jsp</result>
+            <result name="addCarHistory">/AddCarHistory.jsp</result>
+
+            <interceptor-ref name="defaultStack"/>
+            <interceptor-ref name="fileUpload">
+                <param name="allowedTypes">image/jpeg,image/jpg,image/gif</param>
+            </interceptor-ref>
+        </action>
+
+        <action name="*hello" class="XXAction" method="{1}">
+            <result name="adminIndex">/adminIndex.jsp</result>
+            <result name="error">/Error.jsp</result>
+            <result name="listUser">/listUser.jsp</result>
+            <result name="UsersMes">/UsersMes.jsp</result>
+            <result name="updataUsers">/updataUsers.jsp</result>
+            <result name="addUsers">/addUsers.jsp</result>
+            <result name="index">/index.jsp</result>
+            <result name="Home">/Home.jsp</result>
+            <result name="success">/Success.jsp</result>
+
+
+        </action>
+
+
+    </package>
+</struts>
