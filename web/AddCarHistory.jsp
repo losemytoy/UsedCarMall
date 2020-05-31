@@ -35,7 +35,7 @@
 
 <body>
 <jsp:include page="navbar.jsp" flush="true"/>
-<table class="col-md-10" style="margin-top: 150px;" cellpadding="1" cellspacing="1" align="center">
+<table style="margin-top: 150px;width: 100%" cellpadding="1" cellspacing="1" align="center">
     <tr>
         <td valign="top" align="center" border="">
             <p align=center style="font-size: 25px;">已发布车辆信息</p>

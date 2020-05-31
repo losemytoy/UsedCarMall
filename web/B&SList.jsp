@@ -16,30 +16,22 @@
 %>
 <html>
 <head>
-    <title>员工信息查询</title>
+    <title>订单信息查询</title>
     <style>
         form{
             padding: 50px;
-        }
-        div{
-            text-align: center;
         }
     </style>
 </head>
 <body>
 <jsp:include page="navbar.jsp" flush="true"/>
-<div>
-    <table>
-        <input type="text">
-    </table>
-</div>
 <p style="text-align: center; font-size: 40px; font-weight: bold;margin-top: 100px">订单信息查询</p>
 <form action="searchEmphello.action" style="text-align: center;">
     订单编号查询：<input type="text" name="emps.empNo" id="">
     <input type="submit" value="查询">
 </form>
-<div style="margin-left: 200px">
-    <table class="col-md-10" style=" text-align: center;margin-top: 50px;" cellpadding="1" cellspacing="1" align="center;">
+<div style="margin: 0 10%">
+    <table style=" text-align: center;margin-top: 20px;width: 100%" cellpadding="1" cellspacing="1" align="center;">
         <tr>
             <td valign="top" align="center" border="">
                 <p align=center style="font-size: 25px;">订单信息</p>

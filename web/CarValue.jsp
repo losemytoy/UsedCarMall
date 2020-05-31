@@ -32,11 +32,8 @@
         button{
             height: 30px;
             width: 100px;
+        }
 
-        }
-        div{
-            text-align: center;
-        }
     </style>
 </head>
 <body>
@@ -50,7 +47,7 @@
             <a href="Home.jsp" style="float: right;font-size: 17px;margin-top: -47px;margin-right: 40px">返回首页</a>
             <span class="sj_input" style="margin-top: 40px;">用户ID：<input type="text" href="#" name="userNo" placeholder="请输入用户ID" ></span>
             <span>预约日期：<input type="date" name="bookData"></span>
-            <button type="submit" style="margin-top: 20px" >提交</button>
+            <button type="submit" style="margin-top: 20px;margin-left: 47%" >提交</button>
         </form>
     </div>
 
