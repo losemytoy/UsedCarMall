@@ -66,9 +66,17 @@
 
 				<%--登陆注册--%>
 				<div class="sj_logreg">
-					<a href="UserLogIn.jsp">登录</a>
-					<a style="margin-left: 1432px;" href="UserRegister.jsp">注册</a>
+					<%if (session.getAttribute("userId")==null){
+						%>
+						<a href="UserLogIn.jsp">登录</a>
+						<a style="margin-left: 1432px;" href="UserRegister.jsp">注册</a>
+					<%}
+					else{%>
+					<p style="margin-top: -65px;margin-left: 1200px;font-size: 16px">欢迎来到爬爬：<c><%=request.getSession().getAttribute("userId")%></c></p>
+						<a href="UserExit.jsp" target="_top">退出账户</a>
+					<%}%>
 				</div>
+
 
 				<%--搜索框--%>
 				<div class="sj_search">
