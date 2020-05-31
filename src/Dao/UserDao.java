@@ -52,7 +52,7 @@ public class UserDao extends SQLBean{
             statement.setString(2,users.getUserName());
             statement.setString(3,users.getUserPwd());
             statement.setString(4,users.getUserTel());
-            rs = statement.executeQuery();
+            row = statement.executeUpdate();
         }catch (SQLException e){
             e.printStackTrace();
         }finally {

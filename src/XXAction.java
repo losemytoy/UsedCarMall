@@ -1,8 +1,10 @@
 
 import Dao.CarDao;
+import Dao.ResDao;
 import Dao.UserDao;
 import com.opensymphony.xwork2.ActionSupport;
 import entity.Car;
+import entity.Reservation;
 import entity.Users;
 import org.apache.commons.io.FileUtils;
 import org.apache.struts2.ServletActionContext;
@@ -39,12 +41,50 @@ public class XXAction extends ActionSupport implements ServletRequestAware {
     private String bestPath ="D:\\软件工程\\期末作业\\Database_img" ;
     private String path;
 
+    Reservation resIn = new Reservation();
+    ResDao resDao = new ResDao();
+    private Reservation reservation;
 
     public Users getUsers() {
         return users;
     }
     public void setUsers(Users users) { this.users = users; }
 
+
+    public File getMyFile() {
+        return myFile;
+    }
+    public void setMyFile(File myFile) {
+        this.myFile = myFile;
+    }
+    public String getMyFileContentType() {
+        return myFileContentType;
+    }
+    public void setMyFileContentType(String myFileContentType) {
+        this.myFileContentType = myFileContentType;
+    }
+    public String getMyFileFileName() {
+        return myFileFileName;
+    }
+    public void setMyFileFileName(String myFileFileName) {
+        this.myFileFileName = myFileFileName;
+    }
+
+
+    public Car getCar() {
+        return car;
+    }
+    public void setCar(Car car) {
+        this.car = car;
+    }
+
+
+    public Reservation getReservation() {
+        return reservation;
+    }
+    public void setReservation(Reservation reservation) {
+        this.reservation = reservation;
+    }
 
     public String userreg(){
         String userNo =  request.getParameter("userNo");
@@ -57,8 +97,8 @@ public class XXAction extends ActionSupport implements ServletRequestAware {
         userIn.setUserTel(userTel);
         int row = userDao.regUsers(userIn);
         if (row > 0)
-            return "index";
-        return "Home";
+            return "login";
+        return "error";
     }
 
 
@@ -123,43 +163,11 @@ public class XXAction extends ActionSupport implements ServletRequestAware {
             request.setAttribute("listUser",usersList);
             return "listUser";
         }
-
         return "error";
     }
 
 
-    public File getMyFile() {
-        return myFile;
-    }
-
-    public void setMyFile(File myFile) {
-        this.myFile = myFile;
-    }
-
-    public String getMyFileContentType() {
-        return myFileContentType;
-    }
-
-    public void setMyFileContentType(String myFileContentType) {
-        this.myFileContentType = myFileContentType;
-    }
-
-    public String getMyFileFileName() {
-        return myFileFileName;
-    }
-
-    public void setMyFileFileName(String myFileFileName) {
-        this.myFileFileName = myFileFileName;
-    }
-
-    public Car getCar() {
-        return car;
-    }
-
-    public void setCar(Car car) {
-        this.car = car;
-    }
-
+    //图片上传
     public String execute()
     {
         bestPath = "D:\\软件工程\\期末作业\\Database_img";
@@ -174,8 +182,9 @@ public class XXAction extends ActionSupport implements ServletRequestAware {
             return ERROR;
         }
         return SUCCESS;
-
     }
+
+
 
     public String addCar() throws IOException {
         String carno = request.getParameter("carNo");
@@ -211,6 +220,8 @@ public class XXAction extends ActionSupport implements ServletRequestAware {
         return "error";
     }
 
+
+    //修改车辆信息
     public String modCar(){
         String carNo = request.getParameter("carNo");
         Car car = new Car();
@@ -224,6 +235,9 @@ public class XXAction extends ActionSupport implements ServletRequestAware {
         }
     }
 
+
+
+    //更新车辆信息
     public String updateCar(){
         String carno = request.getParameter("carNo");
         String cartype = request.getParameter("type");
@@ -246,10 +260,25 @@ public class XXAction extends ActionSupport implements ServletRequestAware {
         return "addCarHistory";
     }
 
+
+
     public String deleteCar(){
         String carNo = request.getParameter("carNo");
         carDao.deleteCar(carNo);
         return "addCarHistory";
+    }
+
+
+    //添加预约信息
+    public String addResMes(){
+        String userNo = request.getParameter("userNo");
+        String data = request.getParameter("bookData");
+        resIn.setUserNo(userNo);
+        resIn.setBookDate(data);
+        int row = resDao.addResMes(resIn);
+        if (row>0)
+            return "success";
+        return "error";
     }
 
 }

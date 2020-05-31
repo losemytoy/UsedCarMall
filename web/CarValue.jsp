@@ -44,12 +44,14 @@
     <div>
         <jsp:include page="navbar.jsp" flush="true"/>
     </div>
-    <div class="sj_font1">
-        <h2>车辆价值预估预约信息填写</h2>
-        <a href="Home.jsp" style="float: right;font-size: 17px;margin-top: -47px;margin-right: 40px">返回首页</a>
-        <span class="sj_input" style="margin-top: 40px;">用户ID：<input type="text" href="#" name="" placeholder="请输入用户ID" ></span>
-        <span>预约日期：<input type="date"></span>
-        <button type="submit" style="margin-top: 20px">提交</button>
+    <div>
+        <form action="addResMesAction.action" class="sj_font1">
+            <h2>车辆价值预估预约信息填写</h2>
+            <a href="Home.jsp" style="float: right;font-size: 17px;margin-top: -47px;margin-right: 40px">返回首页</a>
+            <span class="sj_input" style="margin-top: 40px;">用户ID：<input type="text" href="#" name="userNo" placeholder="请输入用户ID" ></span>
+            <span>预约日期：<input type="date" name="bookData"></span>
+            <button type="submit" style="margin-top: 20px" >提交</button>
+        </form>
     </div>
 
 </body>

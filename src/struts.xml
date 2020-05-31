@@ -28,6 +28,7 @@
             <result name="error">/Error.jsp</result>
             <result name="modCar">/modCar.jsp</result>
             <result name="addCarHistory">/AddCarHistory.jsp</result>
+            <result name="login">/UserLogIn.jsp</result>
 
             <interceptor-ref name="defaultStack"/>
             <interceptor-ref name="fileUpload">
