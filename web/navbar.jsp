@@ -60,7 +60,7 @@
 							</ul>
 						</li>
 						<li><a href="B&SList.jsp">订单查看&nbsp;&nbsp;&nbsp;</a></li>
-						<li><a href="#">联系我们</a></li>
+						<li><a href="ContentUs.jsp">联系我们</a></li>
 					</ul>
 				</div>
 

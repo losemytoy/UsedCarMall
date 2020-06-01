@@ -1,3 +1,7 @@
+<%@ page import="entity.Car" %>
+<%@ page import="java.util.List" %>
+<%@ page import="Dao.CarDao" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -8,6 +12,7 @@
 	<link rel="stylesheet" href="css/lym.css" />
 	<link rel="stylesheet" href="css/banner.css" />
 	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/showCar.css" />
 
 	<script src="js/banner.js"></script>
 	<script src="js/bootstrap.js"></script>
@@ -15,16 +20,17 @@
 	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 
 </head>
-<style type="text/css">
-	.frame {
-		width: 85vw;
-		height: 40vw;
-		margin: 2vw auto;
+
+<%
+	List<Car> cars= new CarDao().getAllCar();
+	if(cars == null){
+		cars = new ArrayList<>();
 	}
-</style>
+%>
+
 <body>
 <jsp:include page="navbar.jsp" flush="true"/>
-<div class="frame">
+<div style="max-width: 132rem;margin: 0 auto">
 	<!--使用该插件请查看根目录《使用方法.txt》-->
 
 
@@ -61,131 +67,40 @@
 
 </div>
 
-<div class="wrapper" style="margin-top: -175px;">
-	<div class="cols">
-		<div class="col" ontouchstart="this.classList.toggle('hover');">
-			<div class="container1">
-				<div class="front" style="background-image: url(img/1.png)">
-					<div class="inner">
-						<p>Diligord</p>
-						<span>Lorem ipsum</span>
-					</div>
-				</div>
-				<div class="back">
-					<div class="inner">
-						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col" ontouchstart="this.classList.toggle('hover');">
-			<div class="container1">
-				<div class="front" style="background-image:url(img/2.png)">
-					<div class="inner">
-						<p>Rocogged</p>
-						<span>Lorem ipsum</span>
-					</div>
-				</div>
-				<div class="back">
-					<div class="inner">
-						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col" ontouchstart="this.classList.toggle('hover');">
-			<div class="container1">
-				<div class="front" style="background-image: url(img/3.png)">
-					<div class="inner">
-						<p>Strizzes</p>
-						<span>Lorem ipsum</span>
-					</div>
-				</div>
-				<div class="back">
-					<div class="inner">
-						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col" ontouchstart="this.classList.toggle('hover');">
-			<div class="container1">
-				<div class="front" style="background-image: url(img/4.png)">
-					<div class="inner">
-						<p>Clossyo</p>
-						<span>Lorem ipsum</span>
-					</div>
-				</div>
-				<div class="back">
-					<div class="inner">
-						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col" ontouchstart="this.classList.toggle('hover');">
-			<div class="container1">
-				<div class="front" style="background-image: url(img/5.png)">
-					<div class="inner">
-						<p>Rendann</p>
-						<span>Lorem ipsum</span>
-					</div>
-				</div>
-				<div class="back">
-					<div class="inner">
-						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col" ontouchstart="this.classList.toggle('hover');">
-			<div class="container1">
-				<div class="front" style="background-image: url(img/6.png)">
-					<div class="inner">
-						<p>Reflupper</p>
-						<span>Lorem ipsum</span>
-					</div>
-				</div>
-				<div class="back">
-					<div class="inner">
-						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col" ontouchstart="this.classList.toggle('hover');">
-			<div class="container1">
-				<div class="front" style="background-image: url(img/7.png)">
-					<div class="inner">
-						<p>Acirassi</p>
-						<span>Lorem ipsum</span>
-					</div>
-				</div>
-				<div class="back">
-					<div class="inner">
-						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col" ontouchstart="this.classList.toggle('hover');">
-			<div class="container1">
-				<div class="front" style="background-image: url(img/8.png)">
-					<div class="inner">
-						<p>Sohanidd</p>
-						<span>Lorem ipsum</span>
-					</div>
-				</div>
-				<div class="back">
-					<div class="inner">
-						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<div>
+
+<%--	<table style="margin: 0 auto;width: 75%" cellpadding="1" cellspacing="1" align="center">--%>
+<%--		<tr>--%>
+<%--			<td valign="top" align="center" border="">--%>
+				<table id="tab" class="showcar" cellpadding="1" cellspacing="1" align="center">
+					<tr align="center" class="title">
+						<td align="center">车辆图片</td>
+						<td align="center">车辆编号</td>
+						<td align="center">车型</td>
+						<td align="center">配置</td>
+						<td align="center">购买日期</td>
+						<td align="center">行驶里程</td>
+						<td align="center">标价</td>
+					</tr>
+					<%
+						for (Car car:cars){
+					%>
+						<tr align="center">
+							<td><img src="<%=car.getImg_url()%>"></td>
+							<td onmouseover="this.style.backgroundColor='white';" onmouseout="this.style.backgroundColor='#cccccc';" align="center"><%=car.getCarNo()%></td>
+							<td onmouseover="this.style.backgroundColor='white';" onmouseout="this.style.backgroundColor='#cccccc';" align="center"><%=car.getCartype()%></td>
+							<td onmouseover="this.style.backgroundColor='white';" onmouseout="this.style.backgroundColor='#cccccc';" align="center"><%=car.getDispose()%></td>
+							<td onmouseover="this.style.backgroundColor='white';" onmouseout="this.style.backgroundColor='#cccccc';" align="center"><%=car.getBuyData()%></td>
+							<td onmouseover="this.style.backgroundColor='white';" onmouseout="this.style.backgroundColor='#cccccc';" align="center"><%=car.getMileage()%></td>
+							<td onmouseover="this.style.backgroundColor='white';" onmouseout="this.style.backgroundColor='#cccccc';" align="center"><%=car.getPrice()%></td>
+							<td><a href="">查看</a></td>
+						</tr>
+					<% }%>
+					</br>
+				</table>
+<%--			</td>--%>
+<%--		</tr>--%>
+<%--	</table>--%>
+
 
 	<%--<div class="sj_backimg " style="background-size: 85% 65%;background-position: center;margin-left: 20px" >
         <h3 style="font-size: 20px;position: absolute" >买车&卖车流程</h3>

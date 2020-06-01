@@ -1,0 +1,26 @@
+.showcar{
+
+    width: 90%;
+    font-family: verdana,arial,sans-serif;
+    font-size:15px;
+    color:#333333;
+    border-width: 1px;
+    border-color: #999999;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.title {
+    font-size:20px;
+    font-weight: bold;
+    padding: 8px;
+}
+
+#tab img{
+    width: 280px;
+    height: auto;
+}
+
+#tab a{
+    text-decoration: none;
+}

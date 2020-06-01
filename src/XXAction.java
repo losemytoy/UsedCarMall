@@ -38,7 +38,7 @@ public class XXAction extends ActionSupport implements ServletRequestAware {
     private File myFile;
     private String myFileContentType;
     private String myFileFileName;
-    private String bestPath ="D:\\软件工程\\期末作业\\Database_img" ;
+    private String bestPath ="D:\\软件工程\\期末作业\\PAPA\\web\\statics\\images" ;
     private String path;
 
     Reservation resIn = new Reservation();
@@ -170,7 +170,7 @@ public class XXAction extends ActionSupport implements ServletRequestAware {
     //图片上传
     public String execute()
     {
-        bestPath = "D:\\软件工程\\期末作业\\Database_img";
+        bestPath = "D:\\软件工程\\期末作业\\PAPA\\web\\statics\\images";
         try{
             System.out.println("Src File name: " + myFile);
             System.out.println("Dst File name: " + myFileFileName);
@@ -200,8 +200,8 @@ public class XXAction extends ActionSupport implements ServletRequestAware {
 
         File bestFile  = new File(bestPath, myFileFileName);
         FileUtils.copyFile(myFile, bestFile);
-        String path = bestPath+"\\"+myFileFileName;
-        String imgUrl = path;
+//        String path = bestPath+"\\"+myFileFileName;
+        String imgUrl = "statics/images/"+myFileFileName;
 
         carIn.setCarNo(carno);
         carIn.setCartype(cartype);
