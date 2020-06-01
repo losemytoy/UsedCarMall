@@ -281,4 +281,19 @@ public class XXAction extends ActionSupport implements ServletRequestAware {
         return "error";
     }
 
+
+    //显示车辆详情
+    public String carMes(){
+        String carNo = request.getParameter("carNo");
+        Car car = new Car();
+        car.setCarNo(carNo);
+        Car carMes = carDao.showCarMes(car);
+        if(carMes != null){
+            request.setAttribute("carMes",carMes);
+            return "carmessage";
+        }else {
+            return "Error";
+        }
+    }
+
 }

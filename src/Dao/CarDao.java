@@ -181,4 +181,35 @@ public class CarDao extends SQLBean {
         }
         return carList;
     }
+
+    //显示车辆详情
+    public Car showCarMes(Car car){
+        Connection conn = getConnection();
+        PreparedStatement stat = null;
+        ResultSet rs=null;
+        Car car1 = null;
+
+        try {
+            stat = conn.prepareStatement("select carNo,cartype,dispose,color,buyData,mileage,condition,price,img_url from CarTab where carNO=?");
+            stat.setString(1,car.getCarNo());
+            rs = stat.executeQuery();
+            while (rs.next()){
+                car1 = new Car();
+                car1.setCarNo(rs.getString("carNo"));
+                car1.setCartype(rs.getString("cartype"));
+                car1.setDispose(rs.getString("dispose"));
+                car1.setColor(rs.getString("color"));
+                car1.setBuyData(rs.getString("buyData"));
+                car1.setMileage(rs.getString("mileage"));
+                car1.setCondition(rs.getString("condition"));
+                car1.setPrice(rs.getString("price"));
+                car1.setImg_url(rs.getString("img_url"));
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        }finally {
+            closeConnection(conn,stat,rs);
+        }
+        return car1;
+    }
 }

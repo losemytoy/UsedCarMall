@@ -67,45 +67,41 @@
 
 </div>
 
-
-<%--	<table style="margin: 0 auto;width: 75%" cellpadding="1" cellspacing="1" align="center">--%>
-<%--		<tr>--%>
-<%--			<td valign="top" align="center" border="">--%>
-				<table id="tab" class="showcar" cellpadding="1" cellspacing="1" align="center">
-					<tr align="center" class="title">
-						<td align="center">车辆图片</td>
-						<td align="center">车辆编号</td>
-						<td align="center">车型</td>
-						<td align="center">配置</td>
-						<td align="center">购买日期</td>
-						<td align="center">行驶里程</td>
-						<td align="center">标价</td>
-					</tr>
-					<%
-						for (Car car:cars){
-					%>
-						<tr align="center">
-							<td><img src="<%=car.getImg_url()%>"></td>
-							<td onmouseover="this.style.backgroundColor='white';" onmouseout="this.style.backgroundColor='#cccccc';" align="center"><%=car.getCarNo()%></td>
-							<td onmouseover="this.style.backgroundColor='white';" onmouseout="this.style.backgroundColor='#cccccc';" align="center"><%=car.getCartype()%></td>
-							<td onmouseover="this.style.backgroundColor='white';" onmouseout="this.style.backgroundColor='#cccccc';" align="center"><%=car.getDispose()%></td>
-							<td onmouseover="this.style.backgroundColor='white';" onmouseout="this.style.backgroundColor='#cccccc';" align="center"><%=car.getBuyData()%></td>
-							<td onmouseover="this.style.backgroundColor='white';" onmouseout="this.style.backgroundColor='#cccccc';" align="center"><%=car.getMileage()%></td>
-							<td onmouseover="this.style.backgroundColor='white';" onmouseout="this.style.backgroundColor='#cccccc';" align="center"><%=car.getPrice()%></td>
-							<td><a href="">查看</a></td>
-						</tr>
-					<% }%>
-					</br>
-				</table>
-<%--			</td>--%>
-<%--		</tr>--%>
-<%--	</table>--%>
+	<table id="tab" class="showcar" cellpadding="1" cellspacing="1" align="center" >
+		<tr align="center" class="title">
+			<td align="center">车辆图片</td>
+			<td align="center">车辆编号</td>
+			<td align="center">车型</td>
+			<td align="center">配置</td>
+			<td align="center">购买日期</td>
+			<td align="center">行驶里程</td>
+			<td align="center">标价</td>
+		</tr>
+		<%
+			int i =0 ;
+			for (Car car:cars){
+				i++;
+		%>
+		<tr align="center">
+			<td><img src="<%=car.getImg_url()%>"></td>
+			<td onmouseover="this.style.backgroundColor='white';" onmouseout="this.style.backgroundColor='#cccccc';" align="center"><%=car.getCarNo()%></td>
+			<td onmouseover="this.style.backgroundColor='white';" onmouseout="this.style.backgroundColor='#cccccc';" align="center"><%=car.getCartype()%></td>
+			<td onmouseover="this.style.backgroundColor='white';" onmouseout="this.style.backgroundColor='#cccccc';" align="center"><%=car.getDispose()%></td>
+			<td onmouseover="this.style.backgroundColor='white';" onmouseout="this.style.backgroundColor='#cccccc';" align="center"><%=car.getBuyData()%></td>
+			<td onmouseover="this.style.backgroundColor='white';" onmouseout="this.style.backgroundColor='#cccccc';" align="center"><%=car.getMileage()%></td>
+			<td onmouseover="this.style.backgroundColor='white';" onmouseout="this.style.backgroundColor='#cccccc';" align="center"><%=car.getPrice()%></td>
+			<td><a href="carMesAction?carNo=<%=car.getCarNo()%>">查看</a></td>
+		</tr>
+		<%	if (i==8){
+			break;
+		}
+		}%>
+		</br>
+	</table>
 
 
-	<%--<div class="sj_backimg " style="background-size: 85% 65%;background-position: center;margin-left: 20px" >
-        <h3 style="font-size: 20px;position: absolute" >买车&卖车流程</h3>
-        <span></span>
-    </div>--%>
+
+
 
 	<div style="position: relative">
 		<img src="img/广告.jpg" class="sj_img" style="margin-left: 110px;margin-top: 30px;filter: blur(5px);height: 450px;width: 1300px;	">
